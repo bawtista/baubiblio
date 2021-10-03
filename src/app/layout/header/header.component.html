@@ -1,1 +1,12 @@
-<p>header works!</p>
+<p-menubar id="header">
+    <ng-template pTemplate="start">
+        <i (click)="toggleMenu()" class="pi pi-bars" id="sidebar-open-btn"></i>
+        <img src="/assets/images/logos/preview.png" alt="Baubiblio" id="header-banner" draggable="false">
+
+    </ng-template>
+
+    <ng-template pTemplate="end">
+        <input type="text" pInputText placeholder="Search">
+        <button pButton label="Logout" icon="pi pi-power-off"></button>
+    </ng-template>
+</p-menubar>

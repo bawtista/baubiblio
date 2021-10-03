@@ -1,0 +1,14 @@
+#login {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 14%;
+    left: 0;
+    right: 1%;
+}
+
+#login img {
+    filter: drop-shadow(2px 2px 2px grey);
+    user-select: none;
+    margin-top: 10px;
+}

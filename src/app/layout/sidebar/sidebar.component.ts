@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Sidebar } from 'primeng/sidebar';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class SidebarComponent implements OnInit {
 
   visible = true;
+
+  @ViewChild('menubar', {static: true})
+  menubar: Sidebar;
 
   constructor() { }
 

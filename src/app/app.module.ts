@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { APP_PRIMENG_MODULE } from './app.module-primeng';
 import { HeaderComponent } from './layout/header/header.component';
+import { LoginComponent } from './pages/login/login.component';
+import { I18nModule } from '../i18n/i18n.module';
+import { SigninComponent } from './pages/signin/signin.component';
 
 
 @NgModule({
@@ -14,12 +17,15 @@ import { HeaderComponent } from './layout/header/header.component';
     AppComponent,
     SidebarComponent,
     HeaderComponent,
+    LoginComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     APP_PRIMENG_MODULE,
-    AppRoutingModule
+    AppRoutingModule,
+    I18nModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,11 @@
-<app-sidebar></app-sidebar>
-hola mundo
-<router-outlet></router-outlet>
+<app-header (toggleMenu)="isMenuVisible = !isMenuVisible" *ngIf="!isLogin"></app-header>
+
+<p-sidebar #sidebar id="sidebar" [(visible)]="isMenuVisible" [modal]="false" position="left" [showCloseIcon]="false">
+    <p-button>Hola</p-button>
+</p-sidebar>
+
+<div id="content" [ngClass]="{'hidden-menu-content': !isMenuVisible }">
+
+    <router-outlet></router-outlet>
+
+</div>

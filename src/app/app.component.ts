@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { Sidebar } from 'primeng/sidebar';
 import { Usuario } from './core/models/usuario.model';
 import { BibliotecaService } from './core/services/biblioteca.service';
 import { UsuarioService } from './core/services/usuario.service';
@@ -9,13 +11,30 @@ import { UsuarioService } from './core/services/usuario.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'baubiblio';
+  isMenuVisible: boolean;
+  isLogin: boolean;
+  
+  @ViewChild('sidebar', {static: true})
+  sidebar: Sidebar;
+  
+  numbers = Array(150).fill(0).map((x,i)=>i);
 
   constructor(
     private usuariosService: UsuarioService,
-    private bibliotecaService: BibliotecaService
+    private bibliotecaService: BibliotecaService,
+    private router: Router
   ) {
-    
+    this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationEnd) {
+        if (event.url === '/login') {
+          this.isLogin = true;
+        } else {
+          this.isLogin = false;
+        }
+      }
+    });
     //usuariosService.loginUsuario(user);
   
     usuariosService.loginUsuario("bautistaperez3m@gmail.com", "aabbcc").then(e => {

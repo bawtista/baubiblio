@@ -1,1 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --header-height: 50px;
+    --sidebar-width: 40rem;
+}
+
+body {
+    margin: 0px;
+    font-family: "Trebuchet MS", "Open Sans", sans-serif;
+}
+
+#header {
+    position: fixed;
+    width: 100%;
+}
+
+#header .p-menubar {
+    height: var(--header-height);
+    background-color: rgb(170, 170, 255);
+    margin: 0px;
+    border: 1px solid rgb(49, 95, 180);
+}
+
+#sidebar .p-sidebar {
+    height: calc(100vh - var(--header-height));
+    width: var(--sidebar-width);
+    margin-top: var(--header-height);
+    border-top: none;
+}
+
+#sidebar .p-sidebar .p-sidebar-header {
+    display: none;
+}
+
+#sidebar .p-sidebar .p-sidebar-content {
+    padding: 1em;
+}
+
+#sidebar-open-btn {
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 15px;
+    font-size: 1.3em;
+    color: white;
+}
+
+#header-banner {
+    display: inline-block;
+    vertical-align: middle;
+    transform: scale(90%);
+    filter: drop-shadow(3px 3px 3px slateblue);
+    user-select: none;
+}
+
+#header .p-menubar-button {
+    display: none;
+}
+
+#content {
+    padding-top: var(--header-height);
+    padding-left: calc(var(--sidebar-width) + 10px);
+}
+
+#content.hidden-menu-content {
+    padding-left: 10px;
+}
